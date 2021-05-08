@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
-export const Container = styled.div`
+export const Container = styled.div<{ isMenuVisible: boolean }>`
   display: flex;
 
   justify-content: space-between;
@@ -49,7 +49,6 @@ export const Container = styled.div`
       align-items: center;
       position: fixed;
 
-      left: 0;
       top: 65px;
       width: 100%;
       max-width: 240px;
@@ -65,6 +64,7 @@ export const Container = styled.div`
       display: flex;
       overflow-x: hidden;
       transition: 0.5s;
+      left: ${({ isMenuVisible }) => (isMenuVisible ? 0 : '-300px')};
 
       @keyframes drop {
         100% {

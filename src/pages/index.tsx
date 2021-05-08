@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import Link from "next/link";
 import { Container, Container2 } from "./styles";
 import Header from "../components/Header";
@@ -20,7 +20,7 @@ function Home({ users }) {
   return (
     <Container2>
       <Header />
-      <Container>
+      <Container id="main-container">
         <div className="tster">
           <p>oioiioioio</p>
         </div>
@@ -46,13 +46,13 @@ function Home({ users }) {
 //     props: { users: data },
 //   };
 // }
-export async function getStaticProps(context) {
-  const response = await axios.get(
-    "https://jsonplaceholder.typicode.com/users"
-  );
-  const data = await response.data;
-  return {
-    props: { users: data },
-  };
-}
+// export async function getStaticProps(context) {
+// const response = await axios.get(
+//   "https://jsonplaceholder.typicode.com/users"
+// );
+// const data = await response.data;
+// return {
+//   props: { users: data },
+// };
+// }
 export default Home;
