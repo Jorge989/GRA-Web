@@ -1,15 +1,13 @@
 import styled from "styled-components";
 import Link from "next/link";
-export const Container = styled.div`
+export const Container = styled.div<{ isMenuVisible: boolean }>`
   display: flex;
-
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   background: #1c496a;
-
   box-shadow: 0px 0px 10px #ccc;
-  height: 65px;
+  height: 50px;
   width: 100%;
   padding: 20px;
 
@@ -21,12 +19,10 @@ export const Container = styled.div`
   .principal-botoes {
     display: flex;
     flex-direction: row;
-
     width: 80px;
     justify-content: space-between;
     padding-right: 0px;
     margin-left: 10%;
-
     p {
       color: #fff;
       margin-left: 3px;
@@ -42,20 +38,16 @@ export const Container = styled.div`
     padding: 10px;
     justify-content: space-between;
     display: flex;
-
     .drop1 {
       display: flex;
       flex-direction: column;
       align-items: center;
       position: fixed;
-
-      left: 0;
-      top: 65px;
+      top: 50px;
       width: 100%;
       max-width: 240px;
       height: 100%;
       max-height: 100%;
-
       background: #373737;
       border: 0;
       outline: 0;
@@ -65,7 +57,7 @@ export const Container = styled.div`
       display: flex;
       overflow-x: hidden;
       transition: 0.5s;
-
+      left: ${({ isMenuVisible }) => (isMenuVisible ? 0 : "-300px")};
       @keyframes drop {
         100% {
           transform: translateX(0px);
@@ -83,9 +75,7 @@ export const Container = styled.div`
       align-items: center;
       width: 100%;
       height: auto;
-
       padding-right: 40px;
-
       margin-top: 2px;
       .sub-notas1 {
         display: flex;
@@ -95,15 +85,12 @@ export const Container = styled.div`
       }
       .a-menu {
         width: 100%;
-
         cursor: pointer;
         text-decoration: none;
         color: #ffffff;
       }
-
       input {
         cursor: pointer;
-
         margin-left: 0%;
       }
       :hover input {
@@ -112,17 +99,14 @@ export const Container = styled.div`
     }
     .drop2 {
       display: flex;
-
       flex-direction: column;
       list-style: none;
       padding: 0;
       margin: 0;
       width: 100%;
       height: 100%;
-
       .btn-menu {
         display: flex;
-
         font: 500 16px Roboto;
         color: #f1f1f1;
         border: none;
@@ -136,12 +120,10 @@ export const Container = styled.div`
     }
     .menu {
       display: flex;
-
       justify-content: center;
       align-items: center;
       flex-direction: row;
       gap: 15px;
-
       margin-right: 25%;
       cursor: pointer;
       outline: 0;
@@ -149,20 +131,18 @@ export const Container = styled.div`
       width: 22px;
       height: 30px;
       background: transparent;
-
       svg {
         width: 30px;
         height: 22px;
         color: #fff;
       }
     }
-
     h1 {
       align-items: center;
       margin-right: 3%;
       width: 170px;
       color: #fff;
-      font-size: 26px;
+      font-size: 23px;
       position: relative;
       align-self: center;
     }
@@ -171,8 +151,7 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     flex-direction: row;
-
-    width: 18%;
+    width: 16%;
     height: 60px;
 
     .bell {
@@ -182,18 +161,17 @@ export const Container = styled.div`
       background: transparent;
       cursor: pointer;
       svg {
-        width: 23px;
-        height: 25px;
+        width: 22px;
+        height: 24px;
         color: #fff;
+        margin-top: 3px;
       }
     }
     .ball {
-      margin-bottom: 23px;
+      margin-bottom: 17px;
       margin-left: -10px;
-
-      width: 13px;
-      height: 13px;
-
+      width: 10px;
+      height: 10px;
       z-index: 999;
     }
     > .perfil {
@@ -203,35 +181,33 @@ export const Container = styled.div`
       cursor: pointer;
       border: none;
       background: transparent;
-
       margin-left: 2%;
       width: 70px;
       height: 50px;
       .falcon {
-        width: 45px;
-        height: 45px;
+        width: 36px;
+        height: 36px;
+
         box-shadow: 0px 1px 3px #333;
         border-radius: 50px;
       }
-
       > svg {
         width: 50px;
         height: 50px;
       }
     }
     p {
+      margin-bottom: 4px;
       color: #fff;
-      margin-left: 10px;
+      margin-left: 1px;
     }
   }
   @media (max-width: 576px) {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
     background: #1c496a;
-
     box-shadow: 0px 0px 10px #ccc;
     height: 65px;
     width: 100%;
@@ -245,15 +221,12 @@ export const Container = styled.div`
     .principal-botoes {
       display: flex;
       flex-direction: row;
-
       width: 80px;
       justify-content: space-between;
       padding-right: 0px;
       margin-left: 10%;
-
       p {
         color: #fff;
-
         margin-left: 3px;
       }
       .icones-menu {
@@ -263,23 +236,20 @@ export const Container = styled.div`
       }
     }
     .div1 {
+      width: 59%;
       padding: 10px;
       justify-content: space-between;
       display: flex;
-
       .drop1 {
         display: flex;
         flex-direction: column;
         align-items: center;
         position: fixed;
-
-        left: 0;
         top: 65px;
         width: 100%;
-        max-width: 200px;
+        max-width: 240px;
         height: 100%;
         max-height: 100%;
-
         background: #373737;
         border: 0;
         outline: 0;
@@ -287,14 +257,17 @@ export const Container = styled.div`
         color: #f1f1f1;
         padding: 0px;
         display: flex;
-        animation: drop 0.2s ease;
-
+        overflow-x: hidden;
+        transition: 0.5s;
+        left: ${({ isMenuVisible }) => (isMenuVisible ? 0 : "-300px")};
         @keyframes drop {
           100% {
             transform: translateX(0px);
+            transition: 0.5s;
           }
           0% {
             transform: translateX(0);
+            transition: 0.5s;
           }
         }
       }
@@ -304,9 +277,7 @@ export const Container = styled.div`
         align-items: center;
         width: 100%;
         height: auto;
-
         padding-right: 40px;
-
         margin-top: 2px;
         .sub-notas1 {
           display: flex;
@@ -316,15 +287,12 @@ export const Container = styled.div`
         }
         .a-menu {
           width: 100%;
-
           cursor: pointer;
           text-decoration: none;
           color: #ffffff;
         }
-
         input {
           cursor: pointer;
-
           margin-left: 0%;
         }
         :hover input {
@@ -333,17 +301,14 @@ export const Container = styled.div`
       }
       .drop2 {
         display: flex;
-
         flex-direction: column;
         list-style: none;
         padding: 0;
         margin: 0;
         width: 100%;
         height: 100%;
-
         .btn-menu {
           display: flex;
-
           font: 500 16px Roboto;
           color: #f1f1f1;
           border: none;
@@ -357,12 +322,10 @@ export const Container = styled.div`
       }
       .menu {
         display: flex;
-
         justify-content: center;
         align-items: center;
         flex-direction: row;
         gap: 15px;
-
         margin-right: 25%;
         cursor: pointer;
         outline: 0;
@@ -370,31 +333,28 @@ export const Container = styled.div`
         width: 22px;
         height: 30px;
         background: transparent;
-
         svg {
           width: 30px;
           height: 22px;
           color: #fff;
         }
       }
-
       h1 {
-        display: flex;
         align-items: center;
-        margin-left: 15%;
-
+        margin-right: 3%;
+        width: 170px;
         color: #fff;
-        font-size: 20px;
+        font-size: 26px;
+        position: relative;
+        align-self: center;
       }
     }
     .div2 {
-      display: none;
+      display: flex;
       align-items: center;
       flex-direction: row;
-
       width: 18%;
       height: 60px;
-
       .bell {
         display: flex;
         outline: 0;
@@ -410,10 +370,8 @@ export const Container = styled.div`
       .ball {
         margin-bottom: 23px;
         margin-left: -10px;
-
         width: 13px;
         height: 13px;
-
         z-index: 999;
       }
       > .perfil {
@@ -423,7 +381,6 @@ export const Container = styled.div`
         cursor: pointer;
         border: none;
         background: transparent;
-
         margin-left: 2%;
         width: 70px;
         height: 50px;
@@ -433,7 +390,6 @@ export const Container = styled.div`
           box-shadow: 0px 1px 3px #333;
           border-radius: 50px;
         }
-
         > svg {
           width: 50px;
           height: 50px;
@@ -451,7 +407,6 @@ export const NavLinkStyle = styled(Link)`
   display: flex;
   color: red;
   text-decoration: none;
-
   justify-content: space-between;
   background-color: #ffcf00;
   .a-menu {

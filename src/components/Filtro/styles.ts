@@ -8,12 +8,10 @@ export const Container = styled.div`
   .principal-botoes {
     display: flex;
     flex-direction: row;
-
     width: 80px;
     justify-content: space-between;
     padding-right: 0px;
     margin-left: 10%;
-
     p {
       color: #fff;
       margin-left: 3px;
@@ -29,20 +27,17 @@ export const Container = styled.div`
     padding: 10px;
     justify-content: space-between;
     display: flex;
-
     .drop1 {
       display: flex;
       flex-direction: column;
       align-items: center;
       position: fixed;
-
       left: 0;
       top: 65px;
       width: 100%;
       max-width: 240px;
       height: 100%;
       max-height: 100%;
-
       background: #373737;
       border: 0;
       outline: 0;
@@ -51,7 +46,6 @@ export const Container = styled.div`
       padding: 0px;
       display: flex;
       animation: drop 0.2s ease;
-
       @keyframes drop {
         100% {
           transform: translateX(0px);
@@ -67,9 +61,7 @@ export const Container = styled.div`
       align-items: center;
       width: 100%;
       height: auto;
-
       padding-right: 40px;
-
       margin-top: 2px;
       .sub-notas1 {
         display: flex;
@@ -79,15 +71,12 @@ export const Container = styled.div`
       }
       .a-menu {
         width: 100%;
-
         cursor: pointer;
         text-decoration: none;
         color: #ffffff;
       }
-
       input {
         cursor: pointer;
-
         margin-left: 0%;
       }
       :hover input {
@@ -96,17 +85,14 @@ export const Container = styled.div`
     }
     .drop2 {
       display: flex;
-
       flex-direction: column;
       list-style: none;
       padding: 0;
       margin: 0;
       width: 100%;
       height: 100%;
-
       .btn-menu {
         display: flex;
-
         font: 500 16px Roboto;
         color: #f1f1f1;
         border: none;
@@ -119,7 +105,6 @@ export const Container = styled.div`
       flex-direction: column;
     }
   }
-
   svg {
     margin-left: 80%;
     margin-top: 4%;
@@ -152,7 +137,6 @@ export const NavLinkStyle = styled(Link)`
   display: flex;
   color: red;
   text-decoration: none;
-
   justify-content: space-between;
   background-color: #ffcf00;
   .a-menu {

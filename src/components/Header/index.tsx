@@ -85,12 +85,18 @@ const Header: React.FC = () => {
   ];
 
   function handleMenu() {
+    const main = document.getElementById("main-container")! as HTMLDivElement;
+
+    isShowMenu
+      ? (main.style.marginLeft = "0")
+      : (main.style.marginLeft = "240px");
+
     setMenu(!menu);
     setIsShowMenu(!isShowMenu);
   }
 
   return (
-    <Container>
+    <Container isMenuVisible={isShowMenu}>
       <div className="div1">
         {menu === false ? (
           <button className="menu" onClick={() => handleMenu()}>
@@ -104,29 +110,27 @@ const Header: React.FC = () => {
             <FontAwesomeIcon icon={faCaretLeft} className="arrow-left" />
           </button>
         )}
-        {isShowMenu && (
-          <div className="drop1">
-            <div className="drop2">
-              <Filtro
-                name="Buscar..."
-                icon={FiSearch}
-                className="filtro"
-                onChange={(event) => {
-                  setSearchTerm(event.target.value);
-                  console.log(searchTerm);
-                }}
-              />
+        <div className="drop1">
+          <div className="drop2">
+            <Filtro
+              name="Buscar..."
+              icon={FiSearch}
+              className="filtro"
+              onChange={(event) => {
+                setSearchTerm(event.target.value);
+                console.log(searchTerm);
+              }}
+            />
 
-              {botoes
-                .filter(
-                  ({ name }) =>
-                    name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                    name.length === 0
-                )
-                .map(({ element }) => element)}
-            </div>
+            {botoes
+              .filter(
+                ({ name }) =>
+                  name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                  name.length === 0
+              )
+              .map(({ element }) => element)}
           </div>
-        )}
+        </div>
 
         <h1>IntegraNotas</h1>
       </div>
