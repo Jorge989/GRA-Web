@@ -4,7 +4,7 @@ export const Container = styled.div`
   flex-direction: row;
 
   width: 100%;
-
+  max-width: 500px;
   box-sizing: border-box;
   .content-table {
     border-collapse: collapse;
@@ -27,8 +27,6 @@ export const Container = styled.div`
     text-align: left;
     border-radius: 3px 3px 0px 0px;
     overflow-x: auto;
-
-    max-width: 900px;
   }
   .contente-table th,
   .contente-table td {
