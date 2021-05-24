@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Container } from "./styles";
-import Link from "next/link";
+import Table from "rc-table";
 // interface User {
 //   name: string;
 //   email: number;
@@ -12,7 +12,44 @@ import Link from "next/link";
 //     zipcode: string;
 //   };
 // }
-const Table: React.FC = () => {
+const Table2: React.FC = () => {
+  // const columns = [
+  //   {
+  //     title: "Name",
+  //     dataIndex: "name",
+  //     key: "name",
+  //     width: 100,
+  //   },
+  //   {
+  //     title: "Age",
+  //     dataIndex: "age",
+  //     key: "age",
+  //     width: 100,
+  //   },
+  //   {
+  //     title: "Address",
+  //     dataIndex: "address",
+  //     key: "address",
+  //     width: 200,
+  //   },
+  //   {
+  //     title: "Address",
+  //     dataIndex: "address",
+  //     key: "address",
+  //     width: 200,
+  //   },
+  //   {
+  //     title: "Operations",
+  //     dataIndex: "",
+  //     key: "operations",
+  //     render: () => <a href="#">Delete</a>,
+  //   },
+  // ];
+  // const data = [
+  //   { name: "Jack", age: 28, address: "some where", key: "1" },
+  //   { name: "Rose", age: 36, address: "some where", key: "2" },
+  // ];
+
   const [users, setUsers] = useState([]);
 
   const fetchUsers = async () => {
@@ -28,52 +65,87 @@ const Table: React.FC = () => {
   }, []);
   return (
     <Container>
-      <table className="content-table">
-        <thead>
-          <tr>
-            <th>Emissão</th>
-            <th>Chave de Acesso</th>
-            <th>Número</th>
-            <th>Série</th>
-            <th>CNPJ do Emitente</th>
-            <th>Fornecedor</th>
-            <th>Emissão</th>
-            <th>Chave de Acesso</th>
-            <th>Número</th>
-            <th>Série</th>
-            <th>CNPJ do Emitente</th>
-            <th>Fornecedor</th>
-            <th>Número</th>
-            <th>Série</th>
-            <th>CNPJ do Emitente</th>
-            <th>Fornecedor</th>
-          </tr>
-        </thead>
-        {users.map((users) => (
-          // <Link href="/profile/[id]" as={`/profile/${users.id}`}>
-          <tbody>
+      {/* <Table columns={columns} data={data} /> */}
+      {/* <div className="tablediv">
+        <table className="content-table">
+          <thead>
             <tr>
-              <td>{users.address.street}</td>
-              <td>{users.address.zipcode}</td>
-              <td>{users.address.zipcode}</td>
-              <td>{users.address.street}</td>
-              <td>{users.address.street}</td>
-              <td>{users.address.street}</td>
-              <td>{users.address.street}</td>
-              <td>{users.address.zipcode}</td>
-              <td>{users.address.zipcode}</td>
-              <td>{users.address.street}</td>
-              <td>{users.address.street}</td>
-              <td>{users.address.street}</td>
-              <td>{users.address.street}</td>
-              <td>{users.address.zipcode}</td>
-              <td>{users.address.zipcode}</td>
-              <td>{users.address.street}</td>
+              <th>
+                <p>Emissão</p>
+              </th>
+              <th>
+                <p>Emissão</p>
+              </th>
+              <th>
+                <p>Emissão</p>
+              </th>
+              <th>
+                <p>Emissão</p>
+              </th>
+              <th>
+                <p>Emissão</p>
+              </th>
+              <th>
+                <p>Emissão</p>
+              </th>
+              <th>
+                <p>Emissão</p>
+              </th>
+              <th>
+                <p>Emissão</p>
+              </th>
+              <th>
+                <p>Emissão</p>
+              </th>
+              <th>
+                <p>Emissão</p>
+              </th>
+              <th>
+                <p>Emissão</p>
+              </th>
+              <th>
+                <p>Emissão</p>
+              </th>
+              <th>
+                <p>Emissão</p>
+              </th>
+              <th>
+                <p>Emissão</p>
+              </th>
+              <th>
+                <p>Emissão</p>
+              </th>
+              <th>
+                <p>Emissão</p>
+              </th>
             </tr>
-          </tbody>
-          // </Link>
-        ))}
-      </table>
+          </thead>
+          {users.map((users) => (
+            // <Link href="/profile/[id]" as={`/profile/${users.id}`}>
+            <tbody>
+              <tr>
+                <td>{users.address.street}</td>
+                <td>{users.address.zipcode}</td>
+                <td>{users.address.zipcode}</td>
+                <td>{users.address.street}</td>
+                <td>{users.address.street}</td>
+                <td>{users.address.street}</td>
+                <td>{users.address.street}</td>
+                <td>{users.address.zipcode}</td>
+                <td>{users.address.zipcode}</td>
+                <td>{users.address.street}</td>
+                <td>{users.address.street}</td>
+                <td>{users.address.street}</td>
+                <td>{users.address.street}</td>
+                <td>{users.address.zipcode}</td>
+                <td>{users.address.zipcode}</td>
+                <td>{users.address.street}</td>
+              </tr>
+            </tbody>
+            // </Link>
+          ))}
+        </table>
+      </div> */}
     </Container>
   );
 };
@@ -86,4 +158,4 @@ export async function getServerSideProps(context) {
     props: { users: data },
   };
 }
-export default Table;
+export default Table2;
